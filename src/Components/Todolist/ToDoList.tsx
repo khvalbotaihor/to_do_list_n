@@ -4,11 +4,11 @@ import {Footer} from "../Todolist/Footer/Footer";
 import React from "react";
 import styles from "./style.module.css"
 
-export function ToDoList() {
+export function ToDoList(props:any) {
     return (
         <div className={styles.todolist}>
             <Header/>
-            <List/>
+            <List tasks={props.tasks}/>
             <Footer/>
         </div>
     )

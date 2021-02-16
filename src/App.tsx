@@ -3,7 +3,7 @@ import styles from './App.module.css';
 import {ToDoList} from "../src/Components/Todolist/ToDoList";
 import {v1} from "uuid";
 
-type TaskType = {
+export type TaskType = {
     id: string
     title: string
     isDone: boolean
@@ -19,8 +19,8 @@ function App() {
 
     return (
         <div className={styles.App}>
-            <ToDoList />
-            <ToDoList />
+            <ToDoList tasks={tasks}/>
+            <ToDoList tasks={tasks}/>
         </div>
     );
 }
