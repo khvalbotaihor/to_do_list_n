@@ -8,8 +8,8 @@ import {FilterValueTypes, TaskType} from "../../App";
 type ToDoListType = {
     title: string
     changeFilter : (values: FilterValueTypes) => void
-    removeTask : (id:number)=> void
-    addTask : ()=> void
+    removeTask : (id:string)=> void
+    addTask : (title:string)=> void
     tasks: TaskType[]
 }
 
