@@ -9,17 +9,18 @@ type headerType = {
 
 export function Header(props: headerType) {
 
-    const [title, setTitle] = useState("")
+    let [title, setTitle] = useState("")
 
-    const addTask = () =>{
+    function addTask (){
         props.addTask(title)
+        setTitle("")
     }
 
     return (
         <div className="todoList-header">
             <h3 className="todoList-header__title">{props.title}</h3>
             <div className="todoList-newTaskForm">
-                <Input placeholder={title} onChange={(e:any)=>{setTitle(e.currentTarget.value)}} />
+                <Input value={title} onChange={(e:any)=>{setTitle(e.currentTarget.value)}} />
                 <button onClick={addTask}>+</button>
             </div>
         </div>
