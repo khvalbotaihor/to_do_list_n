@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Button.module.css"
+import cn from "classnames"
 
 type  ButtonType = {
     text: string
@@ -7,7 +8,15 @@ type  ButtonType = {
 }
 
 const Button = (props: ButtonType) =>{
-    let css = styles.button
+
+    const css = cn({
+        [styles.button]: true,
+        [styles.danger] : props.type==="danger",
+        [styles.success] : props.type==="success",
+        [styles.info]: props.type === "info"
+    })
+
+/*    let css = styles.button
 
     if(props.type === "danger"){
         css = styles.danger
@@ -21,10 +30,10 @@ const Button = (props: ButtonType) =>{
 
     if(props.type === "default" || !props.type ){
         css = ""
-    }
+    }*/
 
     return(
-        <input className={`${styles.button} ${css}`} type="button" value={props.text}/>
+        <input className={css} type="button" value={props.text}/>
     )
 }
 export default Button;
