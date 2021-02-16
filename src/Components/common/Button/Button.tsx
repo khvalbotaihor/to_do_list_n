@@ -21,22 +21,6 @@ const Button = (props: any) =>{
         props.changeFilter(props.text)
     }
 
-/*    let css = styles.button
-
-    if(props.type === "danger"){
-        css = styles.danger
-    }
-    if(props.type === "info"){
-        css = styles.info
-    }
-    if(props.type === "success"){
-        css = styles.success
-    }
-
-    if(props.type === "default" || !props.type ){
-        css = ""
-    }*/
-
     return(
         <input className={css} type="button" value={props.text} onClick={changeFilter}/>
     )

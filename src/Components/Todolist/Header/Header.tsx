@@ -2,7 +2,12 @@ import React from "react";
 import Button from "../../common/Button/Button";
 import Input from "../../common/Input/Input";
 
-export function Header(props: any) {
+type headerType = {
+    title: string
+    addTask: () => void
+}
+
+export function Header(props: headerType) {
 
     const addTask = () =>{
         props.addTask()

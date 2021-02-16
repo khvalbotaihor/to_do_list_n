@@ -3,8 +3,17 @@ import {List} from "../Todolist/List/List";
 import {Footer} from "../Todolist/Footer/Footer";
 import React from "react";
 import styles from "./style.module.css"
+import {FilterValueTypes, TaskType} from "../../App";
 
-export function ToDoList(props:any) {
+type ToDoListType = {
+    title: string
+    changeFilter : (values: FilterValueTypes) => void
+    removeTask : (id:number)=> void
+    addTask : ()=> void
+    tasks: TaskType[]
+}
+
+export function ToDoList(props:ToDoListType) {
     return (
         <div className={styles.todolist}>
             <Header title={props.title} addTask={props.addTask}/>
