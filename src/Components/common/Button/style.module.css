@@ -1,0 +1,11 @@
+.todolist {
+    width: 500px;
+    margin: 0 auto;
+}
+
+
+.button{
+    padding: 5px;
+    background-color: #4090ff;
+    color:white;
+}
