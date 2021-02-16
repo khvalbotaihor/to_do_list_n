@@ -1,9 +1,13 @@
 import React from "react";
-import s from "./style.module.css"
+import styles from "./style.module.css"
 
-const Button = (props: any) =>{
+type  ButtonType = {
+    text: string
+}
+
+const Button = (props: ButtonType) =>{
     return(
-        <input className={s.button} type="button" value={props.text}/>
+        <input className={styles.button} type="button" value={props.text}/>
     )
 }
 export default Button;

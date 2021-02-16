@@ -1,6 +1,9 @@
 import React from "react";
 
-const Input = (props:any) =>{
+type  InputType = {
+    placeholder: string
+}
+const Input = (props:InputType) =>{
     return(
         <input type="text" placeholder={props.placeholder}/>
     )
