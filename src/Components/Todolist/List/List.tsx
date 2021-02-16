@@ -7,10 +7,10 @@ import {TaskType} from "../../../App";
 
 export function List(props:any) {
 
-    const tasksArray = props.tasks.map((el: TaskType) =>{
-        return <Task title={el.title}
-                     isDone={el.isDone}
-                     key={el.id}
+    const tasksArray = props.tasks.map((task: TaskType) =>{
+        return <Task title={task.title}
+                     isDone={task.isDone}
+                     key={task.id}
         />
 
     } )

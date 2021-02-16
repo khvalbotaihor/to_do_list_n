@@ -7,7 +7,7 @@ import styles from "./style.module.css"
 export function ToDoList(props:any) {
     return (
         <div className={styles.todolist}>
-            <Header/>
+            <Header title={props.title}/>
             <List tasks={props.tasks}/>
             <Footer/>
         </div>

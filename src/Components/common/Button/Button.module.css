@@ -1,0 +1,28 @@
+.todolist {
+    width: 500px;
+    margin: 0 auto;
+}
+
+
+.button{
+    padding: 5px;
+    background-color: #4090ff;
+    color:white;
+    margin: 1px;
+    border: solid black 1px;
+}
+
+.info{
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.success{
+    background-color: forestgreen;
+    color: white;
+}
+
+.danger{
+    background-color: darkred;
+    color: white;
+}
