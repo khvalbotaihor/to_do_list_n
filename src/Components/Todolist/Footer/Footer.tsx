@@ -3,7 +3,7 @@ import Button from "../../common/Button/Button";
 
 export function Footer(props:any) {
 
-    // changeFilter
+
 
     return (
         <div className="todoList-footer">

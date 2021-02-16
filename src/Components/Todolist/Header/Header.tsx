@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {ChangeEvent, useState} from "react";
 import Button from "../../common/Button/Button";
 import Input from "../../common/Input/Input";
 
@@ -16,11 +16,21 @@ export function Header(props: headerType) {
         setTitle("")
     }
 
+    function onInputChange(e:ChangeEvent<HTMLInputElement>) {
+        setTitle(e.currentTarget.value)
+    }
+
+    function onKeyPressChange(e:any) {
+        if(e.charCode===13){addTask()}
+    }
+
     return (
         <div className="todoList-header">
             <h3 className="todoList-header__title">{props.title}</h3>
             <div className="todoList-newTaskForm">
-                <Input value={title} onChange={(e:any)=>{setTitle(e.currentTarget.value)}} />
+                <Input value={title}
+                       onKeyPress={onKeyPressChange}
+                       onChange={onInputChange} />
                 <button onClick={addTask}>+</button>
             </div>
         </div>
