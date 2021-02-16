@@ -7,9 +7,9 @@ import styles from "./style.module.css"
 export function ToDoList(props:any) {
     return (
         <div className={styles.todolist}>
-            <Header title={props.title}/>
-            <List tasks={props.tasks}/>
-            <Footer/>
+            <Header title={props.title} addTask={props.addTask}/>
+            <List tasks={props.tasks} removeTask={props.removeTask}/>
+            <Footer changeFilter={props.changeFilter}/>
         </div>
     )
 }
