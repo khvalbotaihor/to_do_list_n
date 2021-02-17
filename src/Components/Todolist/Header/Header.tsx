@@ -12,8 +12,11 @@ export function Header(props: headerType) {
     let [title, setTitle] = useState("")
 
     function addTask (){
-        props.addTask(title)
-        setTitle("")
+        if(title.trim() !==""){
+            props.addTask(title)
+            setTitle("")
+        }
+
     }
 
     function onInputChange(e:ChangeEvent<HTMLInputElement>) {

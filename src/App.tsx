@@ -32,6 +32,11 @@ function App() {
         setTasks(newTask)
     }
 
+
+    const changeTaskStatus = (taskId: string) =>{
+
+    }
+
     let [filter, setFilter] = useState<FilterValueTypes>("All")
 
     let tasksForToDoList = tasks
