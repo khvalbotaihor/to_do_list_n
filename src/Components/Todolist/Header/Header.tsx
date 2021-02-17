@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from "react";
+import React, {ChangeEvent, KeyboardEvent,useState} from "react";
 import Button from "../../common/Button/Button";
 import Input from "../../common/Input/Input";
 
@@ -20,7 +20,7 @@ export function Header(props: headerType) {
         setTitle(e.currentTarget.value)
     }
 
-    function onKeyPressChange(e:any) {
+    function onKeyPressChange(e:KeyboardEvent<HTMLInputElement>) {
         if(e.charCode===13){addTask()}
     }
 
