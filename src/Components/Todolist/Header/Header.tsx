@@ -13,7 +13,7 @@ export function Header(props: headerType) {
 
     function addTask (){
         if(title.trim() !==""){
-            props.addTask(title)
+            props.addTask(title.trim())
             setTitle("")
         }
 
