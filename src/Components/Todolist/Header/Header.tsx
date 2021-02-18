@@ -12,8 +12,9 @@ export function Header(props: headerType) {
     let [title, setTitle] = useState("")
 
     function addTask (){
-        if(title.trim() !==""){
-            props.addTask(title.trim())
+        title = title.trim()
+        if(title !==""){
+            props.addTask(title)
             setTitle("")
         }
 
