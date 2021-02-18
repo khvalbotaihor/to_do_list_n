@@ -1,20 +1,19 @@
 import React from "react";
 import styles from "./Button.module.css"
-import cn from "classnames"
+import {FilterValueTypes} from "../../../App";
 
 type  ButtonType = {
     text: string
     type?: "default" | "danger" | "success" | "info"
-    changeFilter: ()=> void
+    changeFilter: (text: string)=> void
+    filter:FilterValueTypes
 }
 
-const Button = (props: any) =>{
-    const css = cn({
-        [styles.button]: true,
-        [styles.danger] : props.type==="danger",
-        [styles.success] : props.type==="success",
-        [styles.info]: props.type === "info"
-    })
+const Button = (props: ButtonType) =>{
+    let css = styles.button
+    if (props.filter === props.text){
+        css = `${css} ${styles.activeFilter}`
+    }
 
 
     const changeFilter = () => {

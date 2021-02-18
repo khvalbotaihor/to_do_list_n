@@ -1,6 +1,7 @@
 import React, {ChangeEvent, KeyboardEvent,useState} from "react";
 import Button from "../../common/Button/Button";
 import Input from "../../common/Input/Input";
+import styles from "./Header.module.css"
 
 type headerType = {
     title: string
@@ -8,7 +9,9 @@ type headerType = {
 }
 
 export function Header(props: headerType) {
+    let css = styles.header
 
+    let [error, setError] = useState<null | string>(null)
     let [title, setTitle] = useState("")
 
     function addTask (){
@@ -16,11 +19,16 @@ export function Header(props: headerType) {
         if(title !==""){
             props.addTask(title)
             setTitle("")
+        }else {
+            if(title === ""){
+                setError("Please add a value")
+            }
         }
 
     }
 
     function onInputChange(e:ChangeEvent<HTMLInputElement>) {
+        setError("")
         setTitle(e.currentTarget.value)
     }
 
@@ -34,8 +42,11 @@ export function Header(props: headerType) {
             <div className="todoList-newTaskForm">
                 <Input value={title}
                        onKeyPress={onKeyPressChange}
-                       onChange={onInputChange} />
+                       onChange={onInputChange}
+                       style={error ? styles.error : ""}
+                />
                 <button onClick={addTask}>+</button>
+                {error && <div className={styles.errorMessage}>{error}</div>}
             </div>
         </div>
     )

@@ -4,10 +4,13 @@ type  InputType = {
     value: string
     onChange: (e: any)=> void
     onKeyPress: (e:any)=> void
+    style: string
 }
 const Input = (props:InputType) =>{
     return(
-        <input type="text" value={props.value} onChange={props.onChange} onKeyPress={props.onKeyPress}/>
+        <input
+            className={props.style}
+            type="text" value={props.value} onChange={props.onChange} onKeyPress={props.onKeyPress}/>
     )
 }
 export default Input
