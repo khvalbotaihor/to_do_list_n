@@ -12,6 +12,7 @@ export function List(props:any) {
                      isDone={task.isDone}
                      key={task.id}
                      removeTask={props.removeTask}
+                     changeTaskStatus={props.changeTaskStatus}
                      id={task.id}
         />
 
