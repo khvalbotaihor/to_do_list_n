@@ -5,8 +5,9 @@ import {FilterValueTypes} from "../../../App";
 type  ButtonType = {
     text: string
     type?: "default" | "danger" | "success" | "info"
-    changeFilter: (text: string)=> void
+    changeFilter: (text: string, id:string)=> void
     filter:FilterValueTypes
+    id: string
 }
 
 const Button = (props: ButtonType) =>{
@@ -17,7 +18,7 @@ const Button = (props: ButtonType) =>{
 
 
     const changeFilter = () => {
-        props.changeFilter(props.text)
+        props.changeFilter(props.text, props.id)
     }
 
     return(

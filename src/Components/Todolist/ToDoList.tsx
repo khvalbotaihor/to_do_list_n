@@ -6,8 +6,9 @@ import styles from "./style.module.css"
 import {FilterValueTypes, TaskType} from "../../App";
 
 type ToDoListType = {
+    id: string
     title: string
-    changeFilter : (values: FilterValueTypes) => void
+    changeFilter : (values: FilterValueTypes, id: string) => void
     removeTask : (id:string)=> void
     addTask : (title:string)=> void
     tasks: TaskType[]
@@ -20,7 +21,7 @@ export function ToDoList(props:ToDoListType) {
         <div className={styles.todolist}>
             <Header title={props.title} addTask={props.addTask}/>
             <List tasks={props.tasks} removeTask={props.removeTask} changeTaskStatus={props.changeTaskStatus}/>
-            <Footer changeFilter={props.changeFilter} filter={props.filter}/>
+            <Footer changeFilter={props.changeFilter} filter={props.filter} id={props.id}/>
         </div>
     )
 }
