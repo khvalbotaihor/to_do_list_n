@@ -6,6 +6,7 @@ import {TaskType} from "../../../App";
 // tasks={props.tasks}
 
 export function List(props:any) {
+    debugger
 
     const tasksArray = props.tasks.map((task: TaskType) =>{
         return <Task title={task.title}

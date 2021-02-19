@@ -6,7 +6,7 @@ import cn from "classnames"
 type TaskType = {
     title: string
     isDone: boolean
-    removeTask: ()=> void
+    removeTask: (todoListId:string)=> void
     id: number
     changeTaskStatus: (value:boolean, id:string) => void
 }

@@ -4,8 +4,9 @@ import Input from "../../common/Input/Input";
 import styles from "./Header.module.css"
 
 type headerType = {
+    id: string
     title: string
-    addTask: (title:string) => void
+    addTask: (title:string, id: string) => void
 }
 
 export function Header(props: headerType) {
@@ -17,7 +18,7 @@ export function Header(props: headerType) {
     function addTask (){
         title = title.trim()
         if(title !==""){
-            props.addTask(title)
+            props.addTask(title, props.id)
             setTitle("")
         }else {
             if(title === ""){
