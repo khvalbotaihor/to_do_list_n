@@ -6,7 +6,8 @@ import styles from "./Header.module.css"
 type headerType = {
     id: string
     title: string
-    addTask: (title:string, id: string) => void
+    addTask: (title: string, id: string) => void
+    deleteTaskFromList: (todoListId: string) => void
 }
 
 export function Header(props: headerType) {
@@ -37,9 +38,15 @@ export function Header(props: headerType) {
         if(e.charCode===13){addTask()}
     }
 
+    function deleteTask () {
+            props.deleteTaskFromList(props.id)
+    }
+
     return (
         <div className="todoList-header">
-            <h3 className="todoList-header__title">{props.title}</h3>
+            <h3 className="todoList-header__title">{props.title}
+            <button onClick={deleteTask}>x</button>
+            </h3>
             <div className="todoList-newTaskForm">
                 <Input value={title}
                        onKeyPress={onKeyPressChange}

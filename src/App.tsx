@@ -42,14 +42,6 @@ function App() {
         ],
     })
 
-/*    const [tasks, setTasks] = useState<TaskType[]>([
-        {id: v1(), title: "CSS", isDone: true},
-        {id: v1(), title: "JS", isDone: true},
-        {id: v1(), title: "React", isDone: false},
-        {id: v1(), title: "Rest API", isDone: false},
-        {id: v1(), title: "GraphQL", isDone: false},
-    ])*/
-
     const removeTask = (id: string, todoListId: string) => {
         let tasks = tasksObj[todoListId]
         let filteredList = tasks.filter(task => task.id !== id)
@@ -87,11 +79,20 @@ function App() {
 
     }
 
+    const deleteTaskFromList = (todoListId:string) => {
+        let filteredList = todoLists.filter(todoList => todoList.id !== todoListId)
+
+        setTodoLists(filteredList)
+
+        delete tasksObj[todoListId]
+        setTasks({...tasksObj})
+
+    }
+
     return (
 
         <div className={styles.App}>
             {todoLists.map(tl => {
-                debugger
 
                 let a = tasksObj;
 
@@ -117,6 +118,7 @@ function App() {
                     changeFilter={changeFilter}
                     changeTaskStatus={changeTaskStatus}
                     filter={tl.filter}
+                    deleteTaskFromList={deleteTaskFromList}
                 />
             })}
 

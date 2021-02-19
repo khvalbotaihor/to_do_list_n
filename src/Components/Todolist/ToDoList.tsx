@@ -14,15 +14,14 @@ type ToDoListType = {
     tasks: TaskType[]
     changeTaskStatus: (value:boolean, id:string, todoListId:string)=> void
     filter:string
+    deleteTaskFromList: (todoListId:string)=> void
 }
 
 export function ToDoList(props:ToDoListType) {
 
-    debugger
-
     return (
         <div className={styles.todolist}>
-            <Header title={props.title} addTask={props.addTask} id={props.id}/>
+            <Header title={props.title} addTask={props.addTask} id={props.id} deleteTaskFromList={props.deleteTaskFromList}/>
             <List tasks={props.tasks} removeTask={props.removeTask} changeTaskStatus={props.changeTaskStatus}/>
             <Footer changeFilter={props.changeFilter} filter={props.filter} id={props.id}/>
         </div>
